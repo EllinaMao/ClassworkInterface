@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Task2;
 
 namespace ClassworkInterface
 {    /*Задание 1
@@ -16,8 +17,20 @@ void Show(string info) — отображает информацию и инфо
 
 Метод Show(string info) — отображает на экран элементы массива и информационное сообщение, указанное в параметре info.
 
-Напишите код для тестирования полученной функциональности.*/
-    internal class Array : IOutput
+Напишите код для тестирования полученной функциональности.
+    
+   task 2   
+  Класс, созданный в первом задании Array, должен имплементировать интерфейс IMath.
+
+Метод Max — возвращает максимум среди элементов массива.
+
+Метод Min — возвращает минимум среди элементов массива.
+
+Метод Avg — возвращает среднеарифметическое среди элементов массива.
+
+Метод Search — ищет значение внутри массива. Возвращает true, если значение найдено. Возвращает false, если значение не найдено.    
+      */
+    internal class Array : IOutput, IMath
     {
         public int[] numbers { get; set; }
 
@@ -58,5 +71,23 @@ void Show(string info) — отображает информацию и инфо
             Console.WriteLine();
         }
 
+        int IMath.Max()
+        {
+            return numbers.Max();
+        }
+
+        int IMath.Min()
+        {
+            return numbers.Min();
+        }
+
+        float IMath.Avg()
+        {
+            return (float)numbers.Average();
+        }
+        bool IMath.Search(int valueToSearch)
+        {
+            return numbers.Contains(valueToSearch);
+        }
     }
 }
