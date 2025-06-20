@@ -30,7 +30,7 @@ void Show(string info) — отображает информацию и инфо
 
 Метод Search — ищет значение внутри массива. Возвращает true, если значение найдено. Возвращает false, если значение не найдено.    
       */
-    internal class Array : IOutput, IMath
+    public class Array : IOutput, IMath
     {
         public int[] numbers { get; set; }
 
